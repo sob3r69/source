@@ -13,8 +13,8 @@ class FinalScreen extends StatelessWidget {
 
   const FinalScreen({required this.img, required this.byteImg, Key? key}) : super(key: key);
 
-
-  void _pickFile() async{
+  // Функция изображения изображения
+  void _saveFile() async{
     Directory docDir = await getApplicationDocumentsDirectory();
     String? docPath = docDir.path;
 
@@ -24,7 +24,6 @@ class FinalScreen extends StatelessWidget {
 
     var pngBytes = await byteImg.toByteData(format: ui.ImageByteFormat.png);
     File('$outputFile.png').writeAsBytesSync(pngBytes!.buffer.asInt8List());
-
   }
 
   @override
@@ -37,9 +36,9 @@ class FinalScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: _pickFile, child: const Text("Save"), style: openButtonStyle,),
+                ElevatedButton(onPressed: _saveFile, child: const Text("Save"), style: myButtonStyle,),
                 const SizedBox(height: 14,),
-                ElevatedButton(onPressed: () {Navigator.pop(context);}, child: const Text("Back"), style: openButtonStyle,),
+                ElevatedButton(onPressed: () {Navigator.pop(context);}, child: const Text("Back"), style: myButtonStyle,),
               ],
             ),
           ),

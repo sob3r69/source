@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final ButtonStyle openButtonStyle = 
+final ButtonStyle myButtonStyle = 
   ElevatedButton.styleFrom(
     textStyle: const TextStyle(fontSize: 12), 
     primary: const Color.fromARGB(255, 64, 64, 64),

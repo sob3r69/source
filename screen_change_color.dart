@@ -30,6 +30,7 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
 
   int imgRotate = 0;
 
+  // Функция отвечает за выбор изображения на ПК.
   void _pickFile() async{
     FilePickerResult? result = await FilePicker.platform.pickFiles();
 
@@ -41,6 +42,7 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
     }
   }
 
+  // Функция которая отправляет изображение на следующий экран для окончательного редактирования
   void _finished() async{
     Navigator.push(
       context,
@@ -54,6 +56,7 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
     );
   }
 
+  // Фнукция возврата настроек по дефолту
   void _resetToDefault(){
     setState(() {
       red = 1;
@@ -76,11 +79,9 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: _pickFile, child: Image.asset("assets/icons/folder_out.png"), style: openButtonStyle,),
+                ElevatedButton(onPressed: _pickFile, child: Image.asset("assets/icons/folder_out.png"), style: myButtonStyle,),
                 const SizedBox(height: 14,),
-                ElevatedButton(
-                  onPressed: _finished,
-                  child: const Icon(Icons.crop), style: openButtonStyle),
+                ElevatedButton(onPressed: _finished, child: const Icon(Icons.crop), style: myButtonStyle),
               ],
             ),
           ),
@@ -130,8 +131,8 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ElevatedButton(onPressed: () {setState((){imgRotate -= 1;});}, child: const Icon(Icons.rotate_left), style: openButtonStyle,),
-                    ElevatedButton(onPressed: () {setState((){imgRotate += 1;});}, child: const Icon(Icons.rotate_right), style: openButtonStyle,),
+                    ElevatedButton(onPressed: () {setState((){imgRotate -= 1;});}, child: const Icon(Icons.rotate_left), style: myButtonStyle,),
+                    ElevatedButton(onPressed: () {setState((){imgRotate += 1;});}, child: const Icon(Icons.rotate_right), style: myButtonStyle,),
                   ],
                 )
               ],

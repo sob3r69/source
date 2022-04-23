@@ -41,6 +41,8 @@ class UtilScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  
+    // Функция делающая скриншот редактированного изображения
     void _finished() async {
       await screenshotController
           .capture(pixelRatio: 1)

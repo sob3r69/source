@@ -19,6 +19,7 @@ class CropScreen extends StatefulWidget {
 class _CropScreenState extends State<CropScreen> {
   final controller = CropController();
 
+  // Функция сохранения обрезанного изображения
   void cropped() async{
     ui.Image croppedByteImg = await controller.croppedBitmap();
     Image croppedImage = await controller.croppedImage();
@@ -39,12 +40,12 @@ class _CropScreenState extends State<CropScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {cropped();}, child: const Text("Result"), style: openButtonStyle,),
+                ElevatedButton(onPressed: () {cropped();}, child: const Text("Result"), style: myButtonStyle,),
                 const SizedBox(height: 14,),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const ChangeColorScreen()));
-                  }, child: const Text("Back"), style: openButtonStyle,),
+                  }, child: const Text("Back"), style: myButtonStyle,),
               ],
             ),
           ),
