@@ -13,12 +13,9 @@ class UtilScreen extends StatelessWidget {
   File img;
   Uint8List? returnImg;
 
-  double red;
-  double green;
-  double blue;
+  double red, green, blue;
 
-  double bright;
-  double blured;
+  double bright, blured;
 
   int imgRotate;
 
@@ -28,12 +25,9 @@ class UtilScreen extends StatelessWidget {
 
     required this.img,
 
-    required this.red,
-    required this.green,
-    required this.blue,
+    required this.red, required this.green, required this.blue,
 
-    required this.bright,
-    required this.blured,
+    required this.bright, required this.blured,
 
     required this.imgRotate,
 

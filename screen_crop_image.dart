@@ -40,22 +40,25 @@ class _CropScreenState extends State<CropScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {cropped();}, child: const Text("Result"), style: myButtonStyle,),
+                ElevatedButton(onPressed: () {cropped();}, child: const Icon(Icons.crop), style: myButtonStyle,),
                 const SizedBox(height: 14,),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const ChangeColorScreen()));
-                  }, child: const Text("Back"), style: myButtonStyle,),
+                  }, child: Image.asset("assets/icons/back.png"), style: myButtonStyle,),
               ],
             ),
           ),
     
           const Spacer(),
     
-          CropImage(
-            gridColor: Colors.cyan,
-            image: Image.memory(widget.img!),
-            controller: controller,       
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CropImage(
+              gridColor: Colors.cyan,
+              image: Image.memory(widget.img!),
+              controller: controller,       
+            ),
           ),
     
           Expanded(child: Container()),

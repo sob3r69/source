@@ -21,12 +21,9 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
   File imgFile = File("assets/images/Eblo.jpg");
   Uint8List? returnImg;
 
-  double red = 1;
-  double green = 1;
-  double blue = 1;
+  double red = 1, green = 1, blue = 1;
 
-  double bright = 1;
-  double blured = 0;
+  double bright = 1, blured = 0;
 
   int imgRotate = 0;
 
@@ -59,11 +56,8 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
   // Фнукция возврата настроек по дефолту
   void _resetToDefault(){
     setState(() {
-      red = 1;
-      green = 1;
-      blue = 1;
-      bright = 1;
-      blured = 0;
+      red = 1; green = 1; blue = 1;
+      bright = 1; blured = 0;
     });
   }
 
@@ -113,19 +107,19 @@ class _ChangeColorScreenState extends State<ChangeColorScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(onPressed: _resetToDefault, icon: const Icon(Icons.restore), color: Colors.white),
-                EditSliders(editColor: red, colorName: "Red", callBack: (double newColor) {setState((){red = newColor;});},
+                FilterSliders(editColor: red, colorName: "Red", callBack: (double newColor) {setState((){red = newColor;});},
                  textColor: Colors.red),
                 
-                EditSliders(editColor: green, colorName: "Green", callBack: (double newColor) {setState((){green = newColor;});},
+                FilterSliders(editColor: green, colorName: "Green", callBack: (double newColor) {setState((){green = newColor;});},
                  textColor: Colors.green),
 
-                EditSliders(editColor: blue, colorName: "Blue", callBack: (double newColor) {setState((){blue = newColor;});},
+                FilterSliders(editColor: blue, colorName: "Blue", callBack: (double newColor) {setState((){blue = newColor;});},
                  textColor: Colors.blue[300]),
 
-                EditSliders(editColor: bright, colorName: "Brightness", callBack: (double newColor) {setState((){bright = newColor;});},
+                FilterSliders(editColor: bright, colorName: "Brightness", callBack: (double newColor) {setState((){bright = newColor;});},
                  textColor: Colors.white, maxLen: 2,),
 
-                EditSliders(editColor: blured, colorName: "Blur", callBack: (double newColor) {setState((){blured = newColor;});},
+                FilterSliders(editColor: blured, colorName: "Blur", callBack: (double newColor) {setState((){blured = newColor;});},
                  textColor: Colors.white, maxLen: 10,),
 
                 Row(

@@ -36,9 +36,9 @@ class FinalScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: _saveFile, child: const Text("Save"), style: myButtonStyle,),
+                ElevatedButton(onPressed: _saveFile, child: Image.asset("assets/icons/save.png"), style: myButtonStyle,),
                 const SizedBox(height: 14,),
-                ElevatedButton(onPressed: () {Navigator.pop(context);}, child: const Text("Back"), style: myButtonStyle,),
+                ElevatedButton(onPressed: () {Navigator.pop(context);}, child: Image.asset("assets/icons/back.png"), style: myButtonStyle,),
               ],
             ),
           ),

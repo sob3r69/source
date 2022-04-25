@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class EditSliders extends StatelessWidget {
+class FilterSliders extends StatelessWidget {
   String colorName;
 
   Color? textColor;
 
-  double editColor;
-  double minLen;
-  double maxLen;
+  double editColor, minLen, maxLen;
 
   final ValueChanged<double> callBack;
 
-  EditSliders({ Key? key,
-    required this.editColor,
-    required this.colorName, 
-    required this.callBack, 
-    required this.textColor,
-    this.minLen = 0,
-    this.maxLen = 1
+  FilterSliders({ Key? key,
+    required this.editColor, required this.colorName, 
+    required this.callBack, required this.textColor,
+    this.minLen = 0, this.maxLen = 1
   }) : super(key: key);
 
   @override
