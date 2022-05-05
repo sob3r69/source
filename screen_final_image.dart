@@ -13,7 +13,7 @@ class FinalScreen extends StatelessWidget {
 
   const FinalScreen({required this.img, required this.byteImg, Key? key}) : super(key: key);
 
-  // Функция изображения изображения
+  // Функция сохранения изображения
   void _saveFile() async{
     Directory docDir = await getApplicationDocumentsDirectory();
     String? docPath = docDir.path;
